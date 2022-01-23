@@ -9,13 +9,13 @@ class Graph:
 
     def add_player(self,player):
         for p in self.players:
-            if p.name == player.name:
-                return False
+            if p.nome == player.nome:
+                return p
 
         player.identificador = self.size
         self.size += 1
         self.players.append(player)
-        return True
+        return player
 
     def connect(self, id1, id2):
         self.players[id1].connect(id2)

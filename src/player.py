@@ -7,6 +7,11 @@ class Player:
         self.nacionalidade = nacionalidade
         self.conexoes = conexoes
 
+    def __str__(self):
+        ans = "Nome:{}\nNacionalidade:{}\n".format(self.nome,self.nacionalidade)
+        ans += "IMG:{}\n".format(self.foto)
+        return ans
+
 
     def to_dict(self):
         dicionario = {}
@@ -19,6 +24,6 @@ class Player:
         return dicionario
 
     def connect(self,id_team_mate=-1):
-        if id_team_mate not in self.conexoes and id_team_mate != -1:
+        if (id_team_mate not in self.conexoes) and id_team_mate != -1 and id_team_mate != self.identificador:
             self.conexoes.append(id_team_mate)
             return True
