@@ -1,4 +1,4 @@
-# csgo_connections
+# CS:GO Connections
 
 **Número da Lista**: NullPointerException<br>
 **Conteúdo da Disciplina**: Grafos1<br>
@@ -12,28 +12,31 @@
 ## Sobre 
 <img src="https://img-tlctv1.mncdn.com/mnresize/640/-/upload/20-08/07/cs-go-101-620x350.jpg?0.7478140750624982">
 
-O projeto foi inspirado no conceito de [six degrees of separation](https://en.wikipedia.org/wiki/Six_degrees_of_separation#:~:text=Six%20degrees%20of%20separation%20is,as%20the%20six%20handshakes%20rule.), que curiosamente gerou o problema de [Kevin Bacon](https://blogs.ams.org/mathgradblog/2013/11/22/degrees-kevin-bacon/), que diz que todo ator de Hollywood tem alguma conexão com Kevin. Dado este ponto de partida, o programa tem como cerne saber qual a distancia entre 2 jogadores de [CS:GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/?l=brazilian).
+O projeto foi inspirado no conceito de [six degrees of separation](https://en.wikipedia.org/wiki/Six_degrees_of_separation#:~:text=Six%20degrees%20of%20separation%20is,as%20the%20six%20handshakes%20rule.), que curiosamente gerou o problema de [Kevin Bacon](https://blogs.ams.org/mathgradblog/2013/11/22/degrees-kevin-bacon/), que diz que todo ator de Hollywood tem alguma conexão com Kevin. Dado este ponto de partida, o programa tem como cerne saber qual a distância entre 2 jogadores de [CS:GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/?l=brazilian).
 
 Para criar o grafo e suas conexões são levados em conta os seguintes fatores:
- - Os dados são obtidos pela [hltv](https://www.hltv.org/stats/teams)
- - Se um player **x** já esteve presente na mesma lineup que **y** , então a distância entre eles é 1.
- - A distancia do player **x** ate ele mesmo e 0.
- - O grafo pode nao ser conexo
+ - Os dados são obtidos pela [HLTV](https://www.hltv.org/stats/teams)
+ - Se um player **X** já esteve presente na mesma lineup que **Y**, então a distância entre eles é 1.
+ - A distância do player **X** até ele mesmo é 0.
+ - O grafo pode não ser conexo.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
+
 **Linguagem**: Python3<br>
 **Framework**: (caso exista)<br>
- - Instalacao dos pacotes necessarios
-```
-$ virtualen env
-$ source env/bin/activate
-$ pip3 install -r requirements.txt
 
-```
- - Execucao do projeto
+ - Instalação dos pacotes necessários:
+ 
+  ```
+  $ virtualen env
+  $ source env/bin/activate
+  $ pip3 install -r requirements.txt
+  ```
+
+ - Execução do projeto
   ```
   $ cd src/
   $ python3 main.py
