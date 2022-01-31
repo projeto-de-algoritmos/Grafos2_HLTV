@@ -23,7 +23,7 @@ class Graph:
         self.players[id2].connect(id1)
 
 
-    def bfs(self,init_point=50,end_point=360):
+    def bfs(self,init_point=30,end_point=9):
         visited = [False] * (len(self.players) + 1)
         leave = False
         predecessors = [0] * (len(self.players) + 1)
@@ -52,9 +52,9 @@ class Graph:
         
         x = end_point
         while x != init_point:
-            caminho.append(x)
+            caminho.append(self.players[x])
             x = predecessors[x]
-        print(caminho)
+        caminho.append(self.players[x])
         return caminho
 
 

@@ -10,6 +10,8 @@ class Player:
     def __str__(self):
         ans = "Nome:{}\nNacionalidade:{}\n".format(self.nome,self.nacionalidade)
         ans += "IMG:{}\n".format(self.foto)
+        ans += "Id:{}\n".format(self.identificador)
+        ans += "conexoes:{}\n".format(self.conexoes)
         return ans
 
 
