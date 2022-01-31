@@ -1,4 +1,5 @@
 import csv
+from mimetypes import init
 from player import Player
 
 class Graph:
@@ -22,8 +23,9 @@ class Graph:
         self.players[id2].connect(id1)
 
 
-    def bfs(self,init_point=-1,end_point=-1):
+    def bfs(self,init_point=50,end_point=360):
         return None
+
 
     def save(self):
         with open(self.storage,'w') as f:
@@ -37,4 +39,17 @@ class Graph:
 
 
     def load(self):
-        return None
+        with open(self.storage, newline='') as f:
+            csvreader = csv.reader(f, delimiter=';')
+            header = next(csvreader)
+            rows = []
+            for row in csvreader:
+                p = Player()
+                p.nome = row[0]
+                p.foto = row[1]
+                p.nacionalidade = row[2]
+                p.identificador = row[3]
+                p.conexoes = row[4]
+                rows.append(p)
+        self.players = rows
+        return rows
