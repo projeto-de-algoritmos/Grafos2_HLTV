@@ -24,7 +24,38 @@ class Graph:
 
 
     def bfs(self,init_point=50,end_point=360):
-        return None
+        visited = [False] * (len(self.players) + 1)
+        leave = False
+        predecessors = [0] * (len(self.players) + 1)
+        caminho = []
+        queue = []
+
+        visited[init_point] = True
+        queue.append(init_point)
+        
+        if init_point == end_point:
+            return 0
+
+        while queue:
+            current_node = queue.pop(0)
+            for i in list(self.players[current_node].conexoes.split(", ")):
+                i = int(i)
+                if visited[i] == False:
+                    queue.append(i)
+                    visited[i] = True
+                    predecessors[i] = current_node
+                if i == end_point:
+                    leave = True
+                    break
+            if leave:
+                break
+        
+        x = end_point
+        while x != init_point:
+            caminho.append(x)
+            x = predecessors[x]
+        print(caminho)
+        return caminho
 
 
     def save(self):
