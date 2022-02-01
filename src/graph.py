@@ -38,7 +38,7 @@ class Graph:
 
         while queue:
             current_node = queue.pop(0)
-            for i in list(self.players[current_node].conexoes.split(", ")):
+            for i in self.players[current_node].conexoes:
                 i = int(i)
                 if visited[i] == False:
                     queue.append(i)
@@ -80,7 +80,7 @@ class Graph:
                 p.foto = row[1]
                 p.nacionalidade = row[2]
                 p.identificador = row[3]
-                p.conexoes = row[4]
+                p.conexoes = list(row[4].split(", "))
                 rows.append(p)
         self.players = rows
         return rows
