@@ -1,4 +1,5 @@
 import csv
+from mimetypes import init
 from player import Player
 
 class Graph:
@@ -22,8 +23,40 @@ class Graph:
         self.players[id2].connect(id1)
 
 
-    def bfs(self,init_point=-1,end_point=-1):
-        return None
+    def bfs(self,init_point=30,end_point=9):
+        visited = [False] * (len(self.players) + 1)
+        leave = False
+        predecessors = [0] * (len(self.players) + 1)
+        caminho = []
+        queue = []
+
+        visited[init_point] = True
+        queue.append(init_point)
+        
+        if init_point == end_point:
+            return 0
+
+        while queue:
+            current_node = queue.pop(0)
+            for i in self.players[current_node].conexoes:
+                i = int(i)
+                if visited[i] == False:
+                    queue.append(i)
+                    visited[i] = True
+                    predecessors[i] = current_node
+                if i == end_point:
+                    leave = True
+                    break
+            if leave:
+                break
+        
+        x = end_point
+        while x != init_point:
+            caminho.append(self.players[x])
+            x = predecessors[x]
+        caminho.append(self.players[x])
+        return caminho
+
 
     def save(self):
         with open(self.storage,'w') as f:
@@ -37,4 +70,17 @@ class Graph:
 
 
     def load(self):
-        return None
+        with open(self.storage, newline='') as f:
+            csvreader = csv.reader(f, delimiter=';')
+            header = next(csvreader)
+            rows = []
+            for row in csvreader:
+                p = Player()
+                p.nome = row[0]
+                p.foto = row[1]
+                p.nacionalidade = row[2]
+                p.identificador = row[3]
+                p.conexoes = list(row[4].split(", "))
+                rows.append(p)
+        self.players = rows
+        return rows
