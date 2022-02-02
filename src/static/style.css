@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body {
+    background-image: url('images/wall.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+}
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    min-width: 500px;
+    min-height: 700px;
+    border-radius: 5px;
+}
+form > fieldset {
+    display: block;
+    min-height: 315px;
+    border-color: rgb(22, 170, 22);
+    border-radius: 5px;
+}
+form > fieldset > legend {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+#send{
+    text-align: center;
+}
+.hiden_image {
+    display: none;
+}
+/* ---------------------------------- */
+main#ans {
+    margin: auto;
+}

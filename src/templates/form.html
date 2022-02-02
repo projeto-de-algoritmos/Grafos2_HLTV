@@ -6,29 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS:GO</title>
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/x-icon">
     <script src="{{ url_for('static', filename='gears.js') }}"></script>
 
 </head>
 <body>
+  {#
+    Codigo comentado... :), talvez seja implementado no futuro.
+    {% for p in grafo.players %}
+      <img id="img_{{ p.nome }}" src="{{ p.foto }}" class="hiden_image">
+    {% endfor %}
+    
+    #}
+
+
   <form action="{{ url_for('ans') }}" method="post" enctype="multipart/form-data">
 
-    <label for="player1"> Selecione o Jogador 1:</label>
-    <select name="player1" id="player1" required>
-      {% for p in grafo.players %}
-        <option value="{{ p.identificador }}">{{ p.nome }}</option>
-      {% endfor %}
-    </select>
+    <fieldset id="content1">
+      <legend>Player 1</legend>
+      <select name="player1" id="player1" required>
+        {% for p in grafo.players %}
+          <option value="{{ p.identificador }}">{{ p.nome }}</option>
+        {% endfor %}
+      </select> 
 
-    <label for="player2"> Selecione o Jogador 2:</label>
-    <select name="player2" id="player2" required>
-      {% for p in grafo.players %}
-        <option value="{{ p.identificador }}">{{ p.nome }}</option>
-      {% endfor %}
-    </select>
-    <input type="submit" value="FindPath">
+      <div id="image1">
+      </div>
+    </fieldset>
 
+    <fieldset id="content2">
+      <legend>Player 2</legend>
+      <select name="player2" id="player2" required>
+        {% for p in grafo.players %}
+          <option value="{{ p.identificador }}">{{ p.nome }}</option>
+        {% endfor %}
+      </select>
+
+      <div id="image2">
+      </div>
+    </fieldset>
+
+    <div id="send">
+      <input type="submit" value="FindPath" >
+    </div>
   </form>
 </body>
 </html>
