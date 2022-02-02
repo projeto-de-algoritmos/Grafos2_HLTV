@@ -6,11 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS:GO</title>
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/x-icon">
+    <script src="{{ url_for('static', filename='gears.js') }}"></script>
 
 </head>
 <body>
-  {{ grafo.players[0].nome }}
-  <p>Lorem ipsum dolor met</p>
+  <form action="{{ url_for('ans') }}" method="post" enctype="multipart/form-data">
+
+    <label for="player1"> Selecione o Jogador 1:</label>
+    <select name="player1" id="player1" required>
+      {% for p in grafo.players %}
+        <option value="{{ p.identificador }}">{{ p.nome }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="player2"> Selecione o Jogador 2:</label>
+    <select name="player2" id="player2" required>
+      {% for p in grafo.players %}
+        <option value="{{ p.identificador }}">{{ p.nome }}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" value="FindPath">
+
+  </form>
 </body>
 </html>

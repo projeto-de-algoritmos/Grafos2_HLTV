@@ -1,22 +1,37 @@
-from flask import Flask
-from flask import render_template
+from crypt import methods
+from flask import Flask, render_template, request
 
+from scrap import Crawler
 from graph import Graph
+
+import os
 
 app = Flask(__name__)
 
+global G 
+
 @app.route("/")
 def index():
-    c = Graph()
-    c.load()
-    return render_template('form.html', grafo=c)
+    return render_template('form.html', grafo=G)
 
-@app.route("/ans/")
-def ans(list_players=None):
+@app.route("/ans", methods=['POST'])
+def ans():
+    list_players = G.bfs(int(request.form['player2']),int(request.form['player1']))
     return render_template('ans.html', list_players=list_players)
 
 if __name__ == "__main__":
-    #Verifica se tem o arquivo csv, se nao tem, busca na hltv
-
+    """
+    Verifica se tem o arquivo csv, se nao tem, busca na hltv.
+    Carrega o grafo G com o arquivo csv, ou com os dados da memoria gerados pelo crawler.
+    """
+    if not os.path.exists('./storage.csv'):
+        print("FILE 'storage.csv' not found\nHunting data from hltv.org")
+        c = Crawler()
+        c.walk_teams()
+        c.grafo.save()
+        G = c.grafo
+    else:
+        G = Graph()
+        G.load()
     #Executa o app.
     app.run(debug=False)
