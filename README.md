@@ -34,17 +34,22 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
   $ pip3 install -r requirements.txt
 
 ```
- - Configurando variavel de ambiente para o flask
-```
-  $ export FLASK_APP=main
-```
  - Execucao do projeto
 ```
-  flask run
+  $ cd src
+  $ python3 app.py
 ```
 
 ## Uso 
-Acessar a pagina inicial da aplicacao usando o seu navegado de preferencia, em seguida selecionar 2 jogadores e clicar no botao para o processamento.
+Acessar a pagina inicial da aplicacao( localhost:5000 ) usando o seu navegado de preferencia, em seguida selecionar 2 jogadores e clicar no botao para o processamento.
 
 ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+O projeto pode ser separado em 3 partes.
+
+ 1. Crawler para capturar os dados providos pela hltv.
+ 2. Arquivos de processamento interno( BFS, ESTRUTURA GRAFO/PLAYER)
+ 3. Flask APP para exibicao do projeto com o html/css/js.
+
+Na primeira vez que o seu projeto for executado ele vai demorar um pouco mais do que o normal( mais ou menos uns 50 segundos ou 2 min dependendo da sua maquina e conexao com a internet), pois uma rotina no arquivo app.py esta sendo executada para gerar o arquivo storage.csv ( que seria a base de dados do projeto).
+
+Lembre-se para execucao correta do projeto esteja dentro da pasta src e em seguida execute app.py. A instalacao dos requirements.txt e fundamental.
