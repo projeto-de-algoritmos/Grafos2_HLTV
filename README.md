@@ -25,22 +25,26 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
 **Linguagem**: Python3<br>
-**Framework**: (caso exista)<br>
+**Framework**: Flask<br>
  - Instalacao dos pacotes necessarios
 ```
-$ virtualen env
-$ source env/bin/activate
-$ pip3 install -r requirements.txt
+  $ sudo apt install virtualenv
+  $ virtualen env
+  $ source env/bin/activate
+  $ pip3 install -r requirements.txt
 
 ```
+ - Configurando variavel de ambiente para o flask
+```
+  $ export FLASK_APP=main
+```
  - Execucao do projeto
-  ```
-  $ cd src/
-  $ python3 main.py
-  ```
+```
+  flask run
+```
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Acessar a pagina inicial da aplicacao usando o seu navegado de preferencia, em seguida selecionar 2 jogadores e clicar no botao para o processamento.
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
