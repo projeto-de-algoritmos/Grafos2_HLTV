@@ -2,3 +2,4 @@ __pycache__/
 env/
 storage.csv
 .vscode/
+.~lock.storage.csv#

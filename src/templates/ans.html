@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS:GO</title>
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/x-icon">
     <script src="{{ url_for('static', filename='gears.js') }}"></script>
 </head>
 <body>
     <main id="ans" >
+        <div>
+
+        </div>
         {% for p in list_players %}
             {{ p.nome }}<br>
         {% endfor%}

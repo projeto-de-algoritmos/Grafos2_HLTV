@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+body {
+    background-image: url('images/wall.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+}
+/* ---------------------------------- */
+main#ans {
+    margin: auto;
+}
