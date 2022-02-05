@@ -18,7 +18,7 @@ var cy = cytoscape({
         })
       .selector('.eating')
         .css({
-          'border-color': 'red'
+          'border-color': 'green'
         })
       .selector('.eater')
         .css({
@@ -28,7 +28,6 @@ var cy = cytoscape({
         .css({
           'curve-style': 'bezier',
           'width': 6,
-          'target-arrow-shape': 'triangle',
           'line-color': '#ffaaaa',
           'target-arrow-color': '#ffaaaa'
         })

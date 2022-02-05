@@ -6,6 +6,54 @@ body {
     background-position: center center;
 }
 /* ---------------------------------- */
-main#ans {
-    margin: auto;
+#ans {
+    margin: 25px;
+    font-family: 'Play', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.ans-img {
+    width: 150px;
+    border-radius: 50%;
+    border: 1px;
+    border-color: rgb(22, 170, 22);
+}
+#player-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: solid white;
+    border-width: 2px;
+}
+#player-block h4, h5 {
+    align-self: flex-start;
+    margin: 5px;
+}
+#player-name-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#player-name {
+    color: white;
+    text-shadow: -1px -1px 0 rgb(22, 120, 22), 1px -1px 0 rgb(22, 120, 22), -1px 1px 0 rgb(22, 120, 22), 1px 1px 0 rgb(22, 120, 22);
+    margin: 5px;
+    margin-top: 5px;
+}
+#line {
+    height: 10px;
+    width: 60px;
+    background-color: rgb(22, 170, 22);
+    margin-bottom: 22px;
+    border: solid white;
+    border-width: 2px 0px;
+}
+#line:last-child {
+    display: none;
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/x-icon">
     <script src="{{ url_for('static', filename='gears.js') }}"></script>
+    <script src="../static/graph/cytoscape.min.js"></script>
 
 </head>
 <body>
@@ -17,11 +18,9 @@
       <img id="img_{{ p.nome }}" src="{{ p.foto }}" class="hiden_image">
     {% endfor %}
     
-    <div id="cy">
-      
-    </div>
+    <div id="cy"></div>
     <!-- Load application code at the end to ensure DOM is loaded -->
-    <script src="../static/graph.js"></script>
+    
 
   <form action="{{ url_for('ans') }}" method="post" enctype="multipart/form-data">
 
@@ -34,8 +33,7 @@
           {% endfor %}
         </select>
       </div>
-      <div id="image1">
-      </div>
+      
     </fieldset>
 
     <fieldset id="content2">
@@ -52,8 +50,9 @@
     </fieldset>
 
     <div id="send">
-      <input style="color: red" type="submit" value="FindPath" >
+      <input type="submit" value="Find Path" >
     </div>
   </form>
+  <script src="../static/graph/graph.js"></script>
 </body>
 </html>
