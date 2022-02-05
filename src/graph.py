@@ -34,7 +34,7 @@ class Graph:
         queue.append(init_point)
         
         if init_point == end_point:
-            return 0
+            return [self.players[init_point],self.players[init_point]]
 
         while queue:
             current_node = queue.pop(0)
