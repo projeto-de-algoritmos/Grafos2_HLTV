@@ -12,17 +12,24 @@
 </head>
 <body>
     <main id="ans" >
-        {% for p in list_players %}
-            <div id="player-block">
-                <img id="img_{{ p.nome }}" src="{{ p.foto }}" class="ans-img">
-                <div id="payer-name-div">
-                    <h3 id="player-name">{{ p.nome }}</h3>
+        <div>
+            <button class="go_back">
+                <a href="/">Go Back</a>
+            </button>
+        </div>
+        <div class="player-list">
+            {% for p in list_players %}
+                <div id="player-block">
+                    <img id="img_{{ p.nome }}" src="{{ p.foto }}" class="ans-img">
+                    <div id="payer-name-div">
+                        <h3 id="player-name">{{ p.nome }}</h3>
+                    </div>
+                    <h5 style="color: white;">Country:</h5>
+                    <h4 style="color: white;">{{ p.nacionalidade }}</h4>
                 </div>
-                <h5 style="color: white;">Country:</h5>
-                <h4 style="color: white;">{{ p.nacionalidade }}</h4>
-            </div>
-            <div id="line"></div>
-        {% endfor%}
+                <div id="line"></div>
+            {% endfor%}
+        </div>
     </main>
 </body>
 </html>

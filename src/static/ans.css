@@ -10,6 +10,29 @@ body {
     margin: 25px;
     font-family: 'Play', sans-serif;
     display: flex;
+    flex-direction: column;
+}
+.go_back{
+    margin-bottom: 20px;
+    background-color:  rgb(22, 170, 22);
+    font-weight: bold;
+    font-size: medium;
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.go_back a {
+    text-decoration: none;
+    color: white;
+}
+.go_back:hover {
+    background-color: rgba(22, 170, 22, 0.466);
+}
+.player-list {
+    display: flex;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
@@ -25,9 +48,9 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: solid white;
     border-width: 2px;
 }
