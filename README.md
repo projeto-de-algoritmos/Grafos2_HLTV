@@ -21,7 +21,9 @@ Para criar o grafo e suas conexões são levados em conta os seguintes fatores:
  - O grafo pode não ser conexo.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+![](src/static/images/init_state.png)
+![](src/static/images/selected_state.png)
+![](src/static/images/processed_state.png)
 
 ## Instalação 
 
@@ -54,3 +56,5 @@ O projeto pode ser separado em 3 partes.
 Na primeira vez que o seu projeto for executado ele vai demorar um pouco mais do que o normal( mais ou menos uns 50 segundos ou 2 min dependendo da sua maquina e conexao com a internet), pois uma rotina no arquivo app.py esta sendo executada para gerar o arquivo storage.csv ( que seria a base de dados do projeto).
 
 Lembre-se para execucao correta do projeto esteja dentro da pasta src e em seguida execute app.py. A instalacao dos requirements.txt e fundamental.
+
+link para o video de apresentacao: [CS:GO](https://www.youtube.com/watch?v=wh7vZj086F8)
