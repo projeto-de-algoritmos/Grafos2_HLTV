@@ -57,4 +57,4 @@ Na primeira vez que o seu projeto for executado ele vai demorar um pouco mais do
 
 Lembre-se para execucao correta do projeto esteja dentro da pasta src e em seguida execute app.py. A instalacao dos requirements.txt e fundamental.
 
-link para o video de apresentacao: [CS:GO](https://www.youtube.com/watch?v=wh7vZj086F8)
+link para o video de apresentacao: [CS:GO](https://drive.google.com/file/d/1R-D8vtyrTmbZz3paKJEzj_qxui2K6dxv/view)
