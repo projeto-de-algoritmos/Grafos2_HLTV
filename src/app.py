@@ -12,6 +12,20 @@ global G
 
 @app.route("/")
 def index():
+    return render_template('index.html')
+
+@app.route("/scc")
+def scc():
+    list_scc = G.scc()
+    return render_template('scc.html',list_scc=list_scc)
+
+@app.route("/mst")
+def mst():
+    list_mst = G.mst()
+    return render_template('mst.html', list_mst=list_mst)
+
+@app.route("/form")
+def form():
     return render_template('form.html', grafo=G)
 
 @app.route("/ans", methods=['POST'])
