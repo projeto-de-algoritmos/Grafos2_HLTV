@@ -22,6 +22,21 @@ class Graph:
         self.players[id1].connect(id2)
         self.players[id2].connect(id1)
 
+    def mst(self):
+        """
+        Retorna a lista de players e conexoes que sao essenciais para montar o grafo da hltv, sem conexoes redundantes.
+        """
+        list_tree = []
+
+        return list_tree
+
+    def scc(self):
+        """
+        Retorna uma lista com listas de componentes fortemente conectados.
+        """
+        list_scc = []
+
+        return list_scc
 
     def bfs(self,init_point=30,end_point=9):
         visited = [False] * (len(self.players) + 1)
