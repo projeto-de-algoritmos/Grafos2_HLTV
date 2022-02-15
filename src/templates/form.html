@@ -9,16 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/x-icon">
-    <script src="../static/graph/cytoscape.min.js"></script>
 
 </head>
 <body>
     {% for p in grafo.players %}
       <img id="img_{{ p.nome }}" src="{{ p.foto }}" class="hiden_image">
     {% endfor %}
-    
-    <!--<div id="cy"></div>-->
-    <!-- Load application code at the end to ensure DOM is loaded -->
     
 
   <form action="{{ url_for('ans') }}" method="post" enctype="multipart/form-data">
