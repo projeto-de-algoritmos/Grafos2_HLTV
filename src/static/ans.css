@@ -1,11 +1,5 @@
-@charset "UTF-8";
+@import url('header.css');
 
-body {
-    background-image: url('images/wall.jpg');
-    background-attachment: fixed;
-    background-position: center center;
-}
-/* ---------------------------------- */
 #ans {
     margin: 25px;
     font-family: 'Play', sans-serif;
