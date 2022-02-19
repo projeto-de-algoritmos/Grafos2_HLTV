@@ -1,6 +1,7 @@
 import csv
 from mimetypes import init
 from player import Player
+from ufds import UFDS
 
 class Graph:
     def __init__(self,players=[],storage="storage.csv"):
@@ -54,7 +55,6 @@ class Graph:
         while queue:
             current_node = queue.pop(0)
             for i in self.players[current_node].conexoes:
-                i = int(i)
                 if visited[i] == False:
                     queue.append(i)
                     visited[i] = True
@@ -95,7 +95,7 @@ class Graph:
                 p.foto = row[1]
                 p.nacionalidade = row[2]
                 p.identificador = row[3]
-                p.conexoes = list(row[4].split(", "))
+                p.conexoes = [int(x) for x in row[4].split(", ")]
                 rows.append(p)
         self.players = rows
         return rows
