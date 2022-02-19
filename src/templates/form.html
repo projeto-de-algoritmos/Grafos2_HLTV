@@ -12,9 +12,6 @@
 
 </head>
 <body>
-    {% for p in grafo.players %}
-      <img id="img_{{ p.nome }}" src="{{ p.foto }}" class="hiden_image">
-    {% endfor %}
     
 
   <form action="{{ url_for('ans') }}" method="post" enctype="multipart/form-data">
@@ -51,4 +48,7 @@
 
 <script src="../static/graph/graph.js"></script>
 <script src="{{ url_for('static', filename='gears.js') }}"></script>
+{% for p in grafo.players %}
+  <img id="img_{{ p.nome }}" src="{{ p.foto }}" class="hiden_image">
+{% endfor %}
 </html>

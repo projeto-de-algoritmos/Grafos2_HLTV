@@ -17,7 +17,7 @@ Como tudo que é bom tem parte 2, aqui está a segunda temporada do projeto [CS:
 As principais funcionalidades adicionadas no sistemas serão:
 
 - Árvore geradora mínima de players que estão presentes na hltv
-- Existência de componentes fortemente conectados
+- Componentes conectados
 
 
 
