@@ -1,7 +1,5 @@
 import csv
-from mimetypes import init
 from player import Player
-from ufds import UFDS
 
 class Graph:
     def __init__(self,players=[],storage="storage.csv"):
@@ -22,56 +20,6 @@ class Graph:
     def connect(self, id1, id2):
         self.players[id1].connect(id2)
         self.players[id2].connect(id1)
-
-    def mst(self):
-        """
-        Retorna a lista de players e conexoes que sao essenciais para montar o grafo da hltv, sem conexoes redundantes.
-        """
-        list_tree = []
-
-        return list_tree
-
-    def scc(self):
-        """
-        Retorna uma lista com listas de componentes fortemente conectados.
-        """
-        list_scc = []
-
-        return list_scc
-
-    def bfs(self,init_point=30,end_point=9):
-        visited = [False] * (len(self.players) + 1)
-        leave = False
-        predecessors = [0] * (len(self.players) + 1)
-        caminho = []
-        queue = []
-
-        visited[init_point] = True
-        queue.append(init_point)
-        
-        if init_point == end_point:
-            return [self.players[init_point],self.players[init_point]]
-
-        while queue:
-            current_node = queue.pop(0)
-            for i in self.players[current_node].conexoes:
-                if visited[i] == False:
-                    queue.append(i)
-                    visited[i] = True
-                    predecessors[i] = current_node
-                if i == end_point:
-                    leave = True
-                    break
-            if leave:
-                break
-        
-        x = end_point
-        while x != init_point:
-            caminho.append(self.players[x])
-            x = predecessors[x]
-        caminho.append(self.players[x])
-        return caminho
-
 
     def save(self):
         with open(self.storage,'w') as f:
@@ -98,4 +46,5 @@ class Graph:
                 p.conexoes = [int(x) for x in row[4].split(", ")]
                 rows.append(p)
         self.players = rows
+        self.size = len(self.players)
         return rows
