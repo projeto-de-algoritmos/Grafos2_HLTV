@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CS:GO</title>
     <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='scc.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ufds.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/x-icon">
 </head>
 <body>
     <main>
-        scc
+
+    <img src='{{ main_player.foto }}'>
+    <hr>
+    {% for p in set_players %}
+        <img src='{{ p.foto }}'>
+    {% endfor %}
     </main>
     <script src="{{ url_for('static', filename='gears.js') }}"></script>
 </body>
