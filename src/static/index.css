@@ -22,7 +22,7 @@
 
 .buttons {
     display: flex;
-    height: 300px;
+    height: 170px;
     width: 600px;
     align-items: center;
     justify-content: space-between;
@@ -38,8 +38,8 @@
     background: rgb(93, 255, 18);
     text-decoration: none;
     font-size: 1.4em;
-	font-family: "Work Sans", sans-serif;
-	font-weight: bold;
+	  font-family: "Work Sans", sans-serif;
+	  font-weight: bold;
     padding: 0 20px;
     border-radius: 50%;
     border: solid;
