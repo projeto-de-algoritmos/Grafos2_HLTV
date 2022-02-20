@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 
 from scrap import Crawler
 from graph import Graph
+from control import Control
 
 import os
 
@@ -18,9 +19,11 @@ def index():
 def form_ufds():
     return render_template('form_ufds.html', grafo=G)
 
-@app.route("/ans_ufds")
+@app.route("/ans_ufds", methods=['POST'])
 def ans_ufds():
-    return render_template('ufds.html')
+    main_player = G.players[int(request.form['player1'])]
+    set_players = G.players[5:50]
+    return render_template('ufds.html',set_players=set_players, main_player=main_player)
 
 @app.route("/form")
 def form():
@@ -28,7 +31,7 @@ def form():
 
 @app.route("/ans", methods=['POST'])
 def ans():
-    list_players = G.bfs(int(request.form['player2']),int(request.form['player1']))
+    list_players = Control.bfs(G,int(request.form['player2']),int(request.form['player1']))
     return render_template('ans.html', list_players=list_players)
 
 if __name__ == "__main__":
