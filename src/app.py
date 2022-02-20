@@ -18,9 +18,11 @@ def index():
 def form_ufds():
     return render_template('form_ufds.html', grafo=G)
 
-@app.route("/ans_ufds")
+@app.route("/ans_ufds", methods=['POST'])
 def ans_ufds():
-    return render_template('ufds.html')
+    main_player = G.players[int(request.form['player1'])]
+    set_players = G.players[5:50]
+    return render_template('ufds.html',set_players=set_players, main_player=main_player)
 
 @app.route("/form")
 def form():
