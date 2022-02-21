@@ -1,22 +1,100 @@
+
 @import url('header.css');
 
 #main_index {
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 500px;
-    min-height: 650px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 900px;
+    min-height: 500px;
     position: absolute;
     left: 50%;
     top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
     transform: translate(-50%,-50%);
 }
-.link ,.link:checked{
-    background-color: rgba(0, 150, 219, 0.788);
-    display: block;
-    width: 150px;
-    height: 70px;
+#main_index h1 {
     color: white;
-    margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.buttons {
+    display: flex;
+    height: 170px;
+    width: 600px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 100px;
+    background: rgb(93, 255, 18);
     text-decoration: none;
-    border-radius: 5px;
+    font-size: 1.4em;
+	  font-family: "Work Sans", sans-serif;
+	  font-weight: bold;
+    padding: 0 20px;
+    border-radius: 50%;
+    border: solid;
+    color: #000;
+    border-color: rgb(38, 128, 3);
+}
+
+.link:hover {
+  box-shadow: 0 0 20px 10px rgb(248, 252, 47);
+  animation: burn 1000ms ease-out forwards;
+}
+.link::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  width: 100px;
+  height: 40px;
+  background: rgb(93, 200, 18);
+  animation: flare 1000ms ease-out forwards;
+}
+.link::after {
+  content: '';
+  position: absolute;
+  right: 40px;
+  width: 100px;
+  height: 40px;
+  background: rgb(93, 200, 18);
+  animation: flare 1000ms ease-out forwards;
+}
+
+
+@keyframes flare {
+  100% {
+    transform: translateY(-20px) scale(1.5);
+    filter: blur(10px);
+    opacity: 0;
+  }
+}
+
+@keyframes burn {
+  0% {
+    color: rgb(255, 221, 110);
+    background: rgb(233, 255, 110);
+    box-shadow:
+      0 0 5px 0 rgb(0, 200, 0),
+      0 0 5px 0 rgba(135, 230, 10, 0.8),
+      0 0 5px 0 rgba(230, 226, 10, 0.808);
+  }
+  
+  100% {
+    color: rgba(0, 0, 0, 1);
+    background: rgba(72, 230, 10, 0.6);
+    box-shadow:
+      0 -35px 40px 30px rgba(255, 130, 10, 0),
+      0 -30px 30px 10px rgba(230, 30, 10, 0),
+      0 -20px 10px 0 rgba(255, 255, 10, 0);
+  }
 }

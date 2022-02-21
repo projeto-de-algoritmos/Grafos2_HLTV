@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS:GO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='scc.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ans.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}" type="image/x-icon">
+</head>
+<body>
+    <main>
+    <div class="header">
+        <div class="header-text">
+            <button class="go_back">
+                <a href="/form_scc">Go Back</a>
+            </button>
+            <h2>Players in the same Strongly Connected Component (SCC) as: {{ main_player.nome }}</h2>
+        </div>
+        <img class="main-player" src='{{ main_player.foto }}'>
+    </div>
+    <hr>
+    <div class="player-list">
+        {% for p in set_players %}
+            <div id="player-block">
+                <img id="img_{{ p.nome }}" src="{{ p.foto }}" class="ans-img">
+                <div id="payer-name-div">
+                    <h3 id="player-name">{{ p.nome }}</h3>
+                </div>
+                <h5 style="color: white;">Country:</h5>
+                <h4 style="color: white;">{{ p.nacionalidade }}</h4>
+            </div>
+        {% endfor%}
+    </div>
+    </main>
+    <script src="{{ url_for('static', filename='gears.js') }}"></script>
+</body>
+</html>

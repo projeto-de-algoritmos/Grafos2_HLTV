@@ -15,9 +15,9 @@ global G
 def index():
     return render_template('index.html')
 
-@app.route("/form_ufds")
-def form_ufds():
-    return render_template('form_ufds.html', grafo=G)
+@app.route("/form_scc")
+def form_scc():
+    return render_template('form_scc.html', grafo=G)
 
 @app.route("/ans_ufds", methods=['POST'])
 def ans_ufds():
