@@ -52,7 +52,8 @@ Na primeira vez que o seu projeto for executado ele vai demorar um pouco mais do
 
 Lembre-se para execucao correta do projeto esteja dentro da pasta src e em seguida execute app.py. A instalacao dos requirements.txt é fundamental.
 
-link para o video de apresentacao: VideoNotFoundError
+link para o video de apresentacao: [Video](https://drive.google.com/file/d/1q281wSFIdYrByuqhIzH8oPg8FlSwK-rQ/view)
 
 Conjuntos encontrados:
+<br>
 ![](src/static/images/terminal.jpeg)
