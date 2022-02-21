@@ -42,7 +42,7 @@ class Graph:
                 p.nome = row[0]
                 p.foto = row[1]
                 p.nacionalidade = row[2]
-                p.identificador = row[3]
+                p.identificador = int(row[3])
                 p.conexoes = [int(x) for x in row[4].split(", ")]
                 rows.append(p)
         self.players = rows

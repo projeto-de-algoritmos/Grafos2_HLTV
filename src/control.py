@@ -41,8 +41,53 @@ class Control:
         caminho.append(G.players[x])
         return caminho
 
-    @staticmethod
-    def mst(G:Type[Graph]):
-        list_tree = []
 
-        return list_tree
+    def scc(self,G:Type[Graph], id_player:int) -> List[Type[Player]]:
+        size_players = G.size
+
+        list_tree = []
+        index = 0
+        visited = [False] * (size_players)
+
+        sets = UFDS(size_players)
+        sets_header = set()
+
+        # Monta os conjuntos
+        for i in range(size_players):
+            if not visited[i]:
+                self.dfs(G,sets,i,visited)
+
+        # Encontra o no principal de cada conjunto
+        for i in range(size_players):
+            sets.findSet(i)
+            sets_header.add(sets.parents[i])
+
+        # Cria listas com o no dominante do conjunto
+        for s in sets_header:
+            list_tree.append([ G.players[s] ])
+        
+        # Adiciona os players em seu conjunto pertinente
+        for i in range(size_players):
+            for j in range(len(sets_header)):
+                if sets.isSameSet(i,list_tree[j][0].identificador):
+                    list_tree[j].append(G.players[i])
+                    if i == id_player:
+                        index = j
+                        print("Entrei, id_Player:{}".format(id_player))
+            
+        #for j in range(len(list_tree)):
+        #    print("Nome:{}".format(list_tree[j][0].nome))
+        #    print("Size set:{}".format(len(list_tree[j])))
+
+        print("Index:{}".format(index))
+        return list_tree[index]
+
+    def dfs(self,G:Type[Graph],conjunto:Type[UFDS],u:int,visited:List[bool]):
+        if visited[u]:
+            return None
+
+        visited[u] = True
+        for v in G.players[u].conexoes:
+            if not visited[v]:
+                self.dfs(G,conjunto,v,visited)
+                conjunto.unionSet(u,v)
