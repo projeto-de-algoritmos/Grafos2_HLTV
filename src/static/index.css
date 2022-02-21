@@ -17,7 +17,8 @@
 #main_index h1 {
     color: white;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 130px;
+    text-shadow: -1px -1px 0 rgb(22, 120, 22), 1px -1px 0 rgb(22, 120, 22), -1px 1px 0 rgb(22, 120, 22), 1px 1px 0 rgb(22, 120, 22);
 }
 
 .buttons {

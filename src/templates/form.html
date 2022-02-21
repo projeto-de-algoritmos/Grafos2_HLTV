@@ -12,10 +12,11 @@
 
 </head>
 <body>
-    
-
+  
   <form action="{{ url_for('ans') }}" method="post" enctype="multipart/form-data">
-
+    <button class="go_back">
+      <a href="/">Go Back</a>
+    </button>
     <fieldset id="content1">
       <legend>Player 1</legend>
       <div class="block">
@@ -27,7 +28,6 @@
         <div id="image1"></div>
       </div>
     </fieldset>
-
     <fieldset id="content2">
       <legend>Player 2</legend>
       <div class="block">
@@ -39,11 +39,11 @@
         <div id="image2"></div>
       </div>
     </fieldset>
-
     <div id="send">
       <input type="submit" value="Find Path" >
     </div>
   </form>
+
 </body>
 
 <script src="../static/graph/graph.js"></script>

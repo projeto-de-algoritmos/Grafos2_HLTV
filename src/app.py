@@ -15,16 +15,16 @@ global G
 def index():
     return render_template('index.html')
 
-@app.route("/form_scc")
-def form_scc():
-    return render_template('form_scc.html', grafo=G)
+@app.route("/form_ufds")
+def form_ufds():
+    return render_template('form_ufds.html', grafo=G)
 
 @app.route("/ans_ufds", methods=['POST'])
 def ans_ufds():
     c = Control()
     id_player = int(request.form['player1'])
     main_player = G.players[id_player]
-    set_players = c.scc(G,id_player)
+    set_players = c.ufds(G,id_player)
     return render_template('ufds.html',set_players=set_players, main_player=main_player)
 
 @app.route("/form")

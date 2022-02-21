@@ -42,7 +42,7 @@ class Control:
         return caminho
 
 
-    def scc(self,G:Type[Graph], id_player:int) -> List[Type[Player]]:
+    def ufds(self,G:Type[Graph], id_player:int) -> List[Type[Player]]:
         size_players = G.size
 
         list_tree = []
