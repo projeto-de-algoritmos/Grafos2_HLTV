@@ -14,16 +14,11 @@
 
 Como tudo que é bom tem parte 2, aqui está a segunda temporada do projeto [CS:GO_Connections](https://github.com/projeto-de-algoritmos/grafos1_csgo_connections). Os dados obtidos são do site da [HLTV](https://www.hltv.org/stats/teams).
 
-As principais funcionalidades adicionadas no sistemas serão:
-
-- Árvore geradora mínima de players que estão presentes na hltv
-- Componentes conectados
-
-
 
 ## Screenshots
-### Ainda nao temos imagens comoventes do projeto
-![](https://pm1.narvii.com/6302/0bfc3eb6cac07b21188ce5d49e69f4928804a208_hq.jpg)
+![](./src/static/images/sc1.png)
+![](./src/static/images/sc2.png)
+![](./src/static/images/sc3.png)
 
 ## Instalação 
 
@@ -58,3 +53,6 @@ Na primeira vez que o seu projeto for executado ele vai demorar um pouco mais do
 Lembre-se para execucao correta do projeto esteja dentro da pasta src e em seguida execute app.py. A instalacao dos requirements.txt é fundamental.
 
 link para o video de apresentacao: VideoNotFoundError
+
+Conjuntos encontrados:
+![](src/static/images/terminal.jpeg)
