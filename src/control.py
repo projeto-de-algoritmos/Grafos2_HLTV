@@ -73,12 +73,7 @@ class Control:
                     list_tree[j].append(G.players[i])
                     if i == id_player:
                         index = j
-                        print("Entrei, id_Player:{}".format(id_player))
             
-        #for j in range(len(list_tree)):
-        #    print("Nome:{}".format(list_tree[j][0].nome))
-        #    print("Size set:{}".format(len(list_tree[j])))
-
         print("Index:{}".format(index))
         return list_tree[index]
 

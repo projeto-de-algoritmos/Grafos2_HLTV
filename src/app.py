@@ -33,7 +33,17 @@ def form():
 
 @app.route("/ans", methods=['POST'])
 def ans():
-    list_players = Control.bfs(G,int(request.form['player2']),int(request.form['player1']))
+    id_player1 = int(request.form['player1'])
+    id_player2 = int(request.form['player2'])
+    list_players = []
+    c = Control()
+
+    set_players = c.ufds(G,id_player1)
+    set_players = [ p.identificador for p in set_players ]
+
+    if id_player2 in set_players:
+        list_players = c.bfs(G,id_player2,id_player1)
+
     return render_template('ans.html', list_players=list_players)
 
 if __name__ == "__main__":
